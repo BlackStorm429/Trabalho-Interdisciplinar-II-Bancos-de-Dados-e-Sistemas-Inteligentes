@@ -1,17 +1,17 @@
-public class Carro 
+public class Moto
 {
     private int id;
     private String modelo;
     private int ano;
 
-    public Carro ()
+    public Moto ()
     {
         id = -1;
         modelo = "";
         ano = -1;
     }
 	
-    public Carro (int id, String modelo, int ano) 
+    public Moto (int id, String modelo, int ano) 
     {
         this.id = id;
         this.modelo = modelo;
