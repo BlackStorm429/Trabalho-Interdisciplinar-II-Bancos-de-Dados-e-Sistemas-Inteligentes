@@ -112,7 +112,7 @@ public class DAO
 		try 
 		{  
 			Statement st = conexao.createStatement ();
-			st.executeUpdate ("DELETE FROM carro WHERE id = " + id);
+			st.executeUpdate ("DELETE FROM moto WHERE id = " + id);
 			st.close ();
 			status = true;
 		} 
@@ -127,25 +127,27 @@ public class DAO
 	
 	
 	public Moto [] getMotos () 
-    {
+    	{
 		Moto [] Motos = null;
 		
-		try {
+		try 
+		{
 			Statement st = conexao.createStatement (ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
 			ResultSet rs = st.executeQuery ("SELECT * FROM Moto");	
 			
 			if (rs.next())
 			{
 				rs.last();
-				Carros = new Moto [rs.getRow ()];
+				Motos = new Moto [rs.getRow ()];
 				rs.beforeFirst ();
 
-				for (int i = 0; rs.next(); i++) 
+				for (int i = 0; rs.next (); i++) 
 				{
-					Carros [i] = new Moto (rs.getInt ("id"), rs.getString ("modelo"), 
+					Motos [i] = new Moto (rs.getInt ("id"), rs.getString ("modelo"), 
 									  rs.getInt ("ano"));
 				}
 	            }
+			
 	          st.close ();
 		} 
 		
