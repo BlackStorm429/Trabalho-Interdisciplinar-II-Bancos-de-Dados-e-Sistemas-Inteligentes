@@ -33,13 +33,13 @@ public class Main
                 
             case 3:
                 // Excluir usuário
-                dao.excluirCarro (moto.getId ());
+                dao.excluirMoto (moto.getId ());
                 break;
                 
             case 4:
                 // Atualizar usuário
-                carro.setModelo ("scooter");
-                dao.atualizarCarro (moto);
+                moto.setModelo ("scooter");
+                dao.atualizarMoto (moto);
                 
             case 5:
                 dao.close ();
