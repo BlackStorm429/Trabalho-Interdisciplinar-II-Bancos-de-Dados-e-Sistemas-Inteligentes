@@ -90,10 +90,10 @@ public class DAO
 		{  
 			Statement st = conexao.createStatement ();
 			String sql = "UPDATE moto SET modelo = '" + moto.getModelo () + "', senha = '"  
-				       + moto.getAno()+ "'"
-					   + " WHERE id = " + moto.getId();
-			st.executeUpdate(sql);
-			st.close();
+				       + moto.getAno ()+ "'"
+					   + " WHERE id = " + moto.getId ();
+			st.executeUpdate (sql);
+			st.close ();
 			status = true;
 		} 
 		
@@ -119,7 +119,7 @@ public class DAO
 		
 		catch (SQLException u) 
 		{  
-			throw new RuntimeException(u);
+			throw new RuntimeException (u);
 		}
 		
 		return status;
@@ -135,9 +135,9 @@ public class DAO
 			Statement st = conexao.createStatement (ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
 			ResultSet rs = st.executeQuery ("SELECT * FROM Moto");	
 			
-			if (rs.next())
+			if (rs.next ())
 			{
-				rs.last();
+				rs.last ();
 				Motos = new Moto [rs.getRow ()];
 				rs.beforeFirst ();
 
