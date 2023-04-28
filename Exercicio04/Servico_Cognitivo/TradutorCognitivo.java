@@ -15,6 +15,6 @@ public class TradutorCognitivo
         TranslationResult result = client.translations ().translate (options);
 
         System.out.println ("Texto original: " + textToTranslate);
-        System.out.println ("Tradução para o espanhol: " + result.getTranslations().get(0).getText());
+        System.out.println ("TraduÃ§Ã£o para o espanhol: " + result.getTranslations().get(0).getText());
     }
 }
